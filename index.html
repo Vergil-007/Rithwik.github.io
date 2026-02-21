@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Arthur Morgan | Redemption</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- LOADING SCREEN -->
+<div id="loader">
+    <h1>Red Dead Redemption II</h1>
+    <p>Loading the Outlaw...</p>
+</div>
+
+<!-- BLOOD SPLATTER -->
+<img src="blood.png" id="bloodEffect">
+
+<!-- HERO -->
+<div class="hero">
+    <img src="hero.jpg" class="hero-bg">
+    <div class="fog"></div>
+
+    <div class="hero-content">
+        <h1>Arthur Morgan</h1>
+        <p>Outlaw. Gunslinger. Redemption.</p>
+        <button id="deadEyeBtn">Activate Dead Eye</button>
+    </div>
+</div>
+
+<nav>
+    <a href="#about">About</a>
+    <a href="#abilities">Abilities</a>
+    <a href="#timeline">Timeline</a>
+</nav>
+
+<section id="about">
+    <h2>About</h2>
+    <p>Senior enforcer of the Van der Linde gang. A man torn between loyalty and morality in a fading Wild West.</p>
+</section>
+
+<section id="profile">
+    <h2>Character Profile</h2>
+
+    <div class="profile-container">
+        <img src="portrait.jpg" class="profile-img">
+
+        <div class="profile-info">
+            <h3>Arthur Morgan</h3>
+            <p><strong>Born:</strong> 1863</p>
+            <p><strong>Affiliation:</strong> Van der Linde Gang</p>
+            <p><strong>Role:</strong> Senior Enforcer</p>
+            <p><strong>Special Ability:</strong> Dead Eye</p>
+        </div>
+    </div>
+</section>
+
+<section id="abilities">
+    <h2>Abilities</h2>
+    <ul>
+        <li class="gun-hover">Dead Eye Precision</li>
+        <li class="gun-hover">Master Horseman</li>
+        <li class="gun-hover">Elite Gunslinger</li>
+    </ul>
+</section>
+
+<section id="gallery">
+    <h2>Cinematic Moments</h2>
+
+    <div class="gallery-grid">
+        <img src="horse.jpg">
+        <img src="duel.jpg">
+        <img src="gang.jpg">
+    </div>
+</section>
+
+<section id="timeline">
+    <h2>Life Timeline</h2>
+    <div class="event">1863 – Born</div>
+    <div class="event">1877 – Joined Dutch</div>
+    <div class="event">1899 – Blackwater Incident</div>
+</section>
+
+<audio id="gunshotSound" src="gunshot.mp3"></audio>
+
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,196 @@
+body {
+    margin: 0;
+    font-family: 'Georgia', serif;
+    background: black;
+    color: white;
+    cursor: url('bullet.png'), auto;
+    overflow-x: hidden;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: url('images/grain.png');
+    opacity: 0.05;
+    pointer-events: none;
+}
+
+/* LOADER */
+#loader {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background: black;
+    color: crimson;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    animation: fadeOut 3s forwards;
+    animation-delay: 2s;
+}
+
+@keyframes fadeOut {
+    to { opacity: 0; visibility: hidden; }
+}
+
+/* HERO */
+.hero {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.hero-bg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.5);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 3;
+    text-align: center;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* FOG EFFECT */
+.fog {
+    position: absolute;
+    width: 200%;
+    height: 100%;
+    background: url('fog.png');
+    opacity: 0.2;
+    animation: moveFog 60s linear infinite;
+}
+
+@keyframes moveFog {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+button {
+    padding: 12px 25px;
+    background: darkred;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+/* BLOOD SPLATTER */
+#bloodEffect {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    opacity: 0;
+    pointer-events: none;
+    z-index: 999;
+}
+
+/* DEAD EYE */
+.dead-eye {
+    animation: deadEyeFlash 0.4s alternate 6;
+}
+
+@keyframes deadEyeFlash {
+    from { filter: grayscale(0); }
+    to { filter: grayscale(1) contrast(2) brightness(1.5); }
+}
+
+section {
+    padding: 80px;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.6);
+}
+
+.event {
+    margin: 20px auto;
+    padding: 20px;
+    width: 60%;
+    background: #1c1c1c;
+    border-left: 4px solid crimson;
+}
+
+/* RESPONSIVE */
+@media(max-width: 768px) {
+    .event {
+        width: 90%;
+    }
+}
+
+#profile {
+    background: #0f0f0f;
+    padding: 80px 10%;
+}
+
+.profile-container {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    flex-wrap: wrap;
+}
+
+.profile-img {
+    width: 320px;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 12px;
+
+    /* Make it fully visible */
+    opacity: 1;
+    filter: brightness(1.1) contrast(1.1);
+
+    /* Professional lighting effect */
+    box-shadow: 
+        0 10px 30px rgba(0,0,0,0.6),
+        0 0 15px rgba(220,20,60,0.5);
+
+    transition: 0.4s ease;
+}
+
+.profile-img:hover {
+    transform: scale(1.05);
+    box-shadow: 
+        0 15px 40px rgba(0,0,0,0.8),
+        0 0 25px crimson;
+}
+
+.profile-info {
+    max-width: 500px;
+}
+
+#gallery {
+    padding: 80px 10%;
+    background: black;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.gallery-grid img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    transition: 0.4s;
+    border-radius: 10px;
+}
+
+.gallery-grid img:hover {
+    transform: scale(1.05);
+    filter: brightness(1.2);
+}
